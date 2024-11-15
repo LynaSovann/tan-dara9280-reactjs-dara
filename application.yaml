@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tan-dara9280-reactjs-dara
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/LynaSovann/tan-dara9280-reactjs-dara.git
+    targetRevision: main
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tan-dara9280-reactjs-dara
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  revisionHistoryLimit: 5

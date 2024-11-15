@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tan-dara9280-reactjs-dara-service
+spec:
+  type: NodePort
+  selector:
+    app: tan-dara9280-reactjs-dara
+  ports:
+    - protocol: TCP
+      port: 8190
+      targetPort: 3000

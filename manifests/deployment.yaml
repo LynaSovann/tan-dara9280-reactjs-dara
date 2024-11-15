@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tan-dara9280-reactjs-dara-deployment
+  labels:
+    app: tan-dara9280-reactjs-dara
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tan-dara9280-reactjs-dara
+  template:
+    metadata:
+      labels:
+        app: tan-dara9280-reactjs-dara
+    spec:
+      containers:
+        - name: tan-dara9280-reactjs-dara-container
+          image: pipejet/tan-dara9280-reactjs-dara:0
+          ports:
+            - containerPort: 3000
